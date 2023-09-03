@@ -47,6 +47,7 @@ const CarouselPage = () => {
           source={{ uri: item.image }}
         />
         <Text style={styles.nameSymbolText}>{item.name} - {item.symbol}</Text>
+        <Text>Price: {item.current_price}$</Text>
         {formatPriceChangePercentage(item.price_change_percentage_24h)}
       </View>
     );
@@ -70,7 +71,6 @@ const CarouselPage = () => {
         loop={true} // Loop the carousel endlessly
         onSnapToItem={(index) => setActiveSlide(index)}
       />
-      <Text style={styles.activeSlideText}>Active Slide: {activeSlide}</Text>
     </View>
   );
 };
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
   nameSymbolText: {
     fontSize: 16,
     marginBottom: 5,
-    color: 'black', // Text color for name and symbol
+    color: 'black', // Text color for name, symbol, and price
   },
 });
 

@@ -14,9 +14,9 @@ const Stack = createStackNavigator();
 function MainStack() {
   return (
     <Stack.Navigator>
+      <Stack.Screen name='AllCoins' component={AllCoins} />
       <Stack.Screen name='MainPage' component={MainPage} />
       <Stack.Screen name='CoinInfo' component={CoinInfo} />
-      <Stack.Screen name='AllCoins' component={AllCoins} />
 
 
       {/* You can add more screens to the stack here if needed */}
@@ -36,7 +36,7 @@ function App() {
         >
           <Tab.Screen
             name='MainPage'
-            component={MainStack}
+            component={MainPage}
             options={{
               tabBarLabel: 'Main Page',
               tabBarIcon: ({ color }) => (
@@ -46,7 +46,7 @@ function App() {
           />
           <Tab.Screen
             name='AllCoins'
-            component={AllCoins}
+            component={MainStack}
             options={{
               tabBarLabel: 'All Coins',
               tabBarIcon: ({ color }) => (
